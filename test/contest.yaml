@@ -1,0 +1,9 @@
+name: "test"
+description: "Testing contest"
+tasks:
+  - "bologna"
+users:
+  - username: "u1"
+    password: "p1"
+    ip: null
+token_mode: infinite
