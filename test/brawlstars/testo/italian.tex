@@ -1,0 +1,108 @@
+\usepackage{xcolor}
+\usepackage{afterpage}
+\usepackage{pifont,mdframed}
+\usepackage[bottom]{footmisc}
+\usepackage{minted}
+
+\createsection{\Grader}{Grader di prova}
+
+\newcommand{\inputfile}{\texttt{stdin}}
+\newcommand{\outputfile}{\texttt{stdout}}
+\makeatletter
+\renewcommand{\this@inputfilename}{\texttt{stdin}}
+\renewcommand{\this@outputfilename}{\texttt{stdout}}
+\makeatother
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+Durante la lezione di italiano, mentre l'insegnante spiegava \textit{"L'infinito" di Giacomo Leopardi}, il tuo amico Carlo stava giocando a Brawl Stars.
+Purtroppo però, dopo aver esultato ad alta voce per aver vinto una partita, l'insegnante si è accorta della sua mancanza di attenzione e
+ha deciso di ritiragli il telefono.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{brawl.jpg}
+    \caption{Il telefono di Carlo, momenti prima del disastro. }
+\end{figure}
+
+Per fargli imparare la lezione, ha deciso di dargli $T$ esercizi di matematica\footnote{Il passatempo preferito dell'insegnante è risolvere problemi di informatica su \url{https://training.olinfo.it}},
+ognuno composto da 2 interi, $A_i \leq B_i$. L'obiettivo è quello di trovare la somma dei numeri compresi tra $A_i$ e $B_i$, ovvero
+$A_i + (A_i + 1) + (A_i+2) + \dots + B_i$. Dato che questa somma può essere enorme, il risultato va espresso \textbf{modulo 1000003}. Aiuta Carlo a risolvere i tediosi esercizi dell'insegnante.
+
+\begin{danger}
+    Per evitare di andare in overflow durante i calcoli intermedi, è necessario sfruttare l'aritmetica
+    modulare:
+    \begin{itemize}
+        \item \texttt{(a + b) \% m == ((a \% m) + (b \% m)) \% m}
+        \item \texttt{(a * b) \% m == ((a \% m) * (b \% m)) \% m}
+    \end{itemize}
+
+    Oppure svolgi tutti i calcoli usando una variabile di tipo \texttt{long long} e restituisci il risultato modulo $1000003$.
+\end{danger}
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+\Implementation
+
+Dovrai sottoporre un unico file, con estensione \texttt{.cpp}.
+
+\begin{warning}
+    Tra gli allegati a questo task troverai un template \texttt{brawlstars.cpp} con un esempio di implementazione.
+\end{warning}
+
+Il file di input è composto da $T+1$ righe:
+\begin{itemize}
+    \item Riga 1: l'intero T.
+    \item Riga 2 \dots T+1: gli interi $A_i$ e $B_i$.
+\end{itemize}
+
+Il file di output è composto da $1$ riga:
+\begin{itemize}
+    \item Riga 1: le risposte agli esercizi in ordine, separate da uno spazio.
+\end{itemize}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+\Constraints
+
+\begin{itemize}[nolistsep, itemsep=2mm]
+    \item $1 \le T \le 10000$.
+    \item $1 \leq A_i \leq B_i \leq 10^9$.
+\end{itemize}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+\Scoring
+
+Il tuo programma verrà testato su diversi test case raggruppati in subtask.
+Per ottenere il punteggio relativo ad un subtask,
+è necessario risolvere correttamente tutti i test che lo compongono.
+
+\begin{itemize}[nolistsep,itemsep=2mm]
+    \item \subtask Casi d'esempio.
+    \item \subtask $A_i = 1$ e $B_i \leq 10000$.
+    \item \subtask $A_i = 1$ e $B_i \leq 10000000$.
+    \item \subtask $A_i = 1$.
+    \item \subtask $B_i \leq 10000$.
+    \item \subtask $B_i \leq 10000000$.
+    \item \subtask Nessuna limitazione aggiuntiva.
+\end{itemize}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+\Examples
+
+\begin{example}
+    \exmpfile{brawlstars.input0.txt}{brawlstars.output0.txt}%
+\end{example}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+\Explanation
+
+Nel caso d'esempio, c'è un solo esercizio. La somma dei numeri da $5$ a $7$ è $5+6+7 = 18$.

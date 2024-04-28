@@ -1,0 +1,1 @@
+../testo/brawlstars.input0.txt
