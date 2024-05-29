@@ -1,0 +1,1 @@
+../testo/bologna.input0.txt

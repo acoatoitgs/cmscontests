@@ -1,0 +1,8 @@
+name: "gali_test"
+description: "Liceo Scientifico Galileo Galilei"
+tasks:
+  - "bologna"
+  - "brawlstars"
+  - "scherma"
+  - "zeria"
+token_mode: infinite

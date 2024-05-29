@@ -1,0 +1,100 @@
+\usepackage{xcolor}
+\usepackage{afterpage}
+\usepackage{pifont,mdframed}
+\usepackage[bottom]{footmisc}
+\usepackage{minted}
+
+\createsection{\Grader}{Grader di prova}
+
+\newcommand{\inputfile}{\texttt{stdin}}
+\newcommand{\outputfile}{\texttt{stdout}}
+\makeatletter
+\renewcommand{\this@inputfilename}{\texttt{stdin}}
+\renewcommand{\this@outputfilename}{\texttt{stdout}}
+\makeatother
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+Kenan, amico di Noemi, è un fortissimo schermidore\footnote{Giocatore di scherma.}. Talmente forte, da
+essere sicuro di vincere qualsiasi torneo.
+In particolare, nel prossimo mese ci saranno $N$ tornei diversi, ognuno con un premio al vincitore di $P_i$ euro.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{kenen.jpg}
+    \caption{Kenen durante un suo scontro.}
+\end{figure}
+Tuttavia, Kenan ha un livello $E$ di energia, ed ogni torneo gli consumerà $L_i$ punti di energia. Nel caso l'energia rimasta fosse
+inferiore di quella richiesta da un torneo, Kenan non potrà prenderne parte.
+Trova quanti soldi può vincere Kenan se sceglie in modo ottimale i tornei a cui partecipare.
+
+
+
+
+
+\Implementation
+
+Dovrai sottoporre un unico file, con estensione \texttt{.cpp}.
+
+\begin{warning}
+    Tra gli allegati a questo task troverai un template \texttt{scherma.cpp} con un esempio di implementazione.
+\end{warning}
+
+Il file di input è composto da $N+1$ righe:
+\begin{itemize}
+    \item Riga 1: gli interi $N$ e $E$, separati da uno spazio.
+    \item Riga 2 \dots N+1: gli interi $P_i$ e $L_i$.
+\end{itemize}
+
+Il file di output è composto da $1$ riga:
+\begin{itemize}
+    \item Riga 1: la risposta al problema.
+\end{itemize}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+\Constraints
+
+\begin{itemize}[nolistsep, itemsep=2mm]
+    \item $1 \le E \le 1\:000\:000$.
+    \item $1 \le N \le 1\:000\:000$.
+    \item $1 \le N \cdot E \le 3\:000\:000$.
+    \item $1 \le P_i \le 1\:000\:000\:000$ per ogni $i = 0 \dots N-1$.
+    \item $1 \le L_i \le E$ per ogni $i = 0 \dots N-1$.
+\end{itemize}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+\Scoring
+
+Il tuo programma verrà testato su diversi test case raggruppati in subtask.
+Per ottenere il punteggio relativo ad un subtask,
+è necessario risolvere correttamente tutti i test che lo compongono.
+
+\begin{itemize}[nolistsep,itemsep=2mm]
+    \item \subtask Casi d'esempio.
+    \item \subtask $N \cdot E \le 10$.
+    \item \subtask $L_i$ è uguale per tutti gli $i = 0 \dots N-1$.
+    \item \subtask $N \le 20$.
+    \item \subtask $N \cdot E \le 1\:000$.
+    \item \subtask Nessuna limitazione aggiuntiva.
+\end{itemize}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+\Examples
+
+\begin{example}
+    \exmpfile{scherma.input0.txt}{scherma.output0.txt}%
+\end{example}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+\Explanation
+
+Nel caso d'esempio, c'è un solo esercizio. La somma dei numeri da $5$ a $7$ è $5+6+7 = 18$.
