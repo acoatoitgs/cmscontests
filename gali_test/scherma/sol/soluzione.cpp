@@ -9,10 +9,10 @@ vector<int> P, L;
 
 ll dp(int pos, int en)
 {
+    if (en < 0)
+        return -0x3f3f3f3f3f3f3f3f;
     if (pos == N)
         return 0;
-    if (en <= 0)
-        return -0x3f3f3f3f3f3f3f3f;
 
     if (memo[pos][en] != -1)
         return memo[pos][en];
