@@ -1,3 +1,4 @@
+// @check-accepted: esempi NE_10 L_equal N_small NE_1000 full
 #include <iostream>
 using namespace std;
 
