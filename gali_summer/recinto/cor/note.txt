@@ -1,0 +1,2 @@
+If the problem has multiple solutions / requires a particular correction,
+it's possible to create a correttore.cpp file.

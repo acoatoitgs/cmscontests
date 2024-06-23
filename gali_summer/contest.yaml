@@ -1,0 +1,12 @@
+name: Contest estivo
+description: Contest estivo
+#date: November 11-12th, 2030
+#start: 1920582000
+#stop: 1920679200
+allow_registration: true
+timezone: Europe/Rome
+location: Online
+logo: logo.pdf
+
+tasks:
+- recinto
