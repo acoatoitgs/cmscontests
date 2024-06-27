@@ -1,0 +1,129 @@
+\usepackage{xcolor}
+\usepackage{afterpage}
+\usepackage{pifont,mdframed}
+\usepackage[bottom]{footmisc}
+\usepackage{minted}
+
+\createsection{\Grader}{Grader di prova}
+\newcommand{\inputfile}{\texttt{stdin}}
+\newcommand{\outputfile}{\texttt{stdout}}
+\makeatletter
+\renewcommand{\this@inputfilename}{\texttt{stdin}}
+\renewcommand{\this@outputfilename}{\texttt{stdout}}
+\renewcommand{\this@syllabuslevel}{5}
+\renewcommand{\this@custdifficulty}{3}
+\makeatother
+\setdifficulty{4}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+Durante una lezione di matematica, Evan si imbatte nella sezione aurea, ovvero una costante definita nel seguente modo:
+$$\Phi = \frac{1 + \sqrt{5}}{2}$$
+
+Per i Greci, la sezione aurea rappresentava l'ideale di bellezza e armonia matematica nella natura e nell'arte. Il nome
+"sezione aurea" deriva dal greco "\textit{hē chrysē tomē}", che significa "taglio d'oro", indicando il valore prezioso e perfetto
+attribuito a questa proporzione.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{aureo.png}
+    \caption{La sezione aurea si può ritrovare ovunque.}
+\end{figure}
+
+Tuttavia Evan non è convinto della bellezza di questo numero, e perciò decide di inventarne uno nuovo, che si chiamerà per l'appunto
+"numero di Evan" e verrà indicato con la lettera $\mathcal{E}$. Il numero di Evan non è una costante, bensì una funzione che ha come
+argomento un array $A$ lungo $N$, ed è definita in questo modo:
+$$\mathcal{E}(A) = f(1) \cdot f(2) \cdot … \cdot  f(N)$$
+Mentre la funzione $f(i)$ è definita come segue:
+\begin{itemize}
+    \item Ordina i primi $i$ elementi dell'array $A$ in ordine non decrescente, dando origine ad un nuovo array $s_i$.
+    \item $f(i) = |s_0\cdot 1 + s_1 \cdot 2+ … + s_{i-1} \cdot i|$
+\end{itemize}
+
+Ad esempio, se $A = [2,1,4]$:
+\begin{itemize}
+    \item $s_1 = [2]$, quindi $f(1) = |2\cdot 1 |= 2$
+    \item $s_2 = [1,2]$, quindi $f(2) = |1\cdot 1 + 2\cdot 2| = 5$
+    \item $s_3 = [1,2,4]$, quindi $f(3) = |1\cdot 1 + 2\cdot 2 + 4\cdot 3|= 17$
+\end{itemize}
+
+Di conseguenza $\mathcal{E}(A) = f(1) \cdot f(2) \cdot f(3) = 2 \cdot 5 \cdot 17 = 170$
+
+Ora è giunto il momento di testare la validità di questo numero, perciò dato un array $A$ lungo $N$,
+dovrai calcolare $\mathcal{E}(A)$. Dato che può essere enorme, dovrai calcolare $\mathcal{E}(A)\mod (10^9+7)$.
+
+
+\Implementation
+
+Dovrai sottoporre un unico file, con estensione \texttt{.cpp}.
+
+\begin{warning}
+    Tra gli allegati a questo task troverai un template \texttt{aureo.cpp} con un esempio di implementazione.
+\end{warning}
+
+Il file di input è composto da $2$ righe:
+\begin{itemize}
+    \item Riga 1: l'intero $N$.
+    \item Riga 2: $N$ interi che compongo l'array $A$.
+\end{itemize}
+
+Il file di output è composto da $1$ riga:
+\begin{itemize}
+    \item Riga 1: la risposta al problema.
+\end{itemize}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+\Constraints
+
+\begin{itemize}[nolistsep, itemsep=2mm]
+    \item $1 \le N \le 100\:000$.
+    \item $-10^5 \le A_i \le 10^5$ per ogni $i = 0 \dots N-1$.
+\end{itemize}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+\Scoring
+
+Il tuo programma verrà testato su diversi test case raggruppati in subtask.
+Per ottenere il punteggio relativo ad un subtask,
+è necessario risolvere correttamente tutti i test che lo compongono.
+
+\IIOTsubtask{0}{1}{Casi d'esempio.}
+
+\IIOTsubtask{15}{1}{$N \le 100$ e $V_i >= 0$ per ogni $i = 0\dots N$.}
+
+\IIOTsubtask{10}{1}{$N \le 100$.}
+
+\IIOTsubtask{40}{4}{$V_i >= 0$ per ogni $i = 0\dots N$.}
+
+\IIOTsubtask{35}{4}{Nessuna limitazione aggiuntiva.}
+
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+\Examples
+
+\begin{example}
+    \exmpfile{aureo.input0.txt}{aureo.output0.txt}%
+    \exmpfile{aureo.input1.txt}{aureo.output1.txt}%
+    \exmpfile{aureo.input2.txt}{aureo.output2.txt}%
+\end{example}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+\Explanation
+
+Il primo caso d'esempio è quello descritto dal problema.
+
+Nel secondo caso d'esempio:
+\begin{itemize}
+    \item $f(1) = |2\cdot 1| = 2$
+    \item $f(2) = |-5\cdot 1 + 2\cdot 2| = 1$
+    \item $f(2) = |-5\cdot 1 + 2\cdot 2 + 2\cdot 5| = 5$
+\end{itemize}
+Quindi $\mathcal{E}(A) = 2 \cdot 1 \cdot 5 = 10$.

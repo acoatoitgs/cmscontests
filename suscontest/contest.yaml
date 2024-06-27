@@ -1,0 +1,7 @@
+name: "suscontest"
+description: "Alenygam è sus"
+tasks:
+  - "recinto"
+  - "aureo"
+  - "zeria"
+token_mode: infinite
