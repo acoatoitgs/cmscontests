@@ -4,7 +4,7 @@
 #include <iostream>
 using namespace std;
 int N, K;
-
+// ALIBABA TRIG
 inline int inv(int n)
 {
     return (K - (n % K)) % K;
