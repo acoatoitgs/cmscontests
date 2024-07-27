@@ -1,8 +1,8 @@
 name: recinto
-title: Corde prolisse
-syllabuslevel: 3
+title: Recinti di Praseodimio
+syllabuslevel: 1
 
-memory_limit: 128
+memory_limit: 32
 time_limit: 1.0
 infile: ""
 outfile: ""

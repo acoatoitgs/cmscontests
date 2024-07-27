@@ -1,0 +1,13 @@
+name: squaremania
+title: Squaremania
+syllabuslevel: 1
+
+memory_limit: 32
+time_limit: 1.0
+infile: ""
+outfile: ""
+
+score_mode: max_subtask
+token_mode: disabled
+public_testcases: all
+feedback_level: full

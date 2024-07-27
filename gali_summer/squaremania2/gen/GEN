@@ -1,0 +1,47 @@
+# <maxN> <option> <seed>
+
+#ST: 0
+#STNAME: example
+#COPY: testo/squaremania2.input0.txt
+#COPY: testo/squaremania2.input1.txt
+#COPY: testo/squaremania2.input2.txt
+
+#ST: 50
+#STNAME: N_le_11
+#COPY: input/N_1.txt
+#COPY: input/N_2.txt
+#COPY: input/N_3.txt
+#COPY: input/N_4.txt
+#COPY: input/N_5.txt
+#COPY: input/N_6.txt
+#COPY: input/N_7.txt
+#COPY: input/N_8.txt
+#COPY: input/N_9.txt
+#COPY: input/N_10.txt
+#COPY: input/N_11.txt
+
+
+#ST: 50
+#STNAME: full
+15000 0 100
+15000 0 101
+15000 0 102
+15000 0 103
+15000 1 104
+15000 1 105
+15000 1 106
+15000 1 107
+15000 1 108
+15000 1 109
+15000 1 110
+15000 1 111
+15000 1 112
+15000 1 113
+15000 0 114
+15000 0 115
+15000 0 116
+#COPY: input/greedyfail0.txt
+#COPY: input/greedyfail1.txt
+#COPY: input/greedyfail2.txt
+#COPY: input/greedyfail3.txt
+

@@ -1,0 +1,13 @@
+name: aureo
+title: Diffidenza Greca
+syllabuslevel: 4
+
+memory_limit: 256
+time_limit: 1.0
+infile: ""
+outfile: ""
+
+score_mode: max_subtask
+token_mode: disabled
+public_testcases: all
+feedback_level: full

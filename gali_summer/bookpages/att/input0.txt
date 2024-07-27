@@ -1,0 +1,1 @@
+../testo/bookpages.input0.txt

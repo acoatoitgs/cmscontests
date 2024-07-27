@@ -1,0 +1,1 @@
+../testo/recinto.input1.txt

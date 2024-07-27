@@ -17,23 +17,22 @@
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-L'allevatore Abbondanzio vuole costruire un recinto per le sue anatre, e perimetrarlo con delle corde.
-Per fare ciò si è recato su Amazon e ha aquistato N corde diverse, dove la corda $i = 0 \dots N-1$ è lunga $V_i$ metri.
-In particolare, il perimetro del recinto di Abbondanzio sarà lungo $K$ metri, perciò è necessaria una corda lunga $K$
-oppure un suo multiplo, dato che una corda troppo lunga o troppo corta potrebbe rappresentare un pericolo per le sue anatre.
+L'allevatore Pierignolo, rivale di Abbondanzio, ha recentemente avuto una fuga di anatre dalla sua fattoria.
+Gli animali si sono sentiti ispirati dal libro \textit{La fattoria degli animali di George Orwell} e hanno
+deciso di evadere.
+
+Per evitare che accada nuovamente, Pierignolo ha intenzione di costruire un recinto di \textit{Praseodimio(III) ossido}.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.5\textwidth]{duck.jpg}
-    \caption{Anatre. Tante anatre.}
+    \includegraphics[width=0.5\textwidth]{toxic.png}
+    \caption{L'azienda che produce il \textit{Praseodimio(III) ossido}.}
 \end{figure}
 
-Sfortunatamente le corde non sono tutte della lunghezza giusta, perciò vuole sceglierne $4$ e legarle insieme,
-in modo che la lunghezza finale della corda sia $V_f = V_a + V_b + V_c + V_d$ metri.
-Abbondanzio si è reso conto che ci sono molti modi per creare una corda adatta, e vuole sapere esattamente in quanti modi si può fare.
+Il recinto deve essere lungo esattamente $K$ metri e Pierignolo ha solo un pezzo di \textit{Praseodimio(III) ossido} lungo $N$ metri.
+Pierignolo può tagliare il pezzo come preferisce, grazie alla sua nuova smerigliatrice angolare.
 
-Più formalmente, dato un array $V$ di lunghezza $N$, trova in quanti modi puoi sceglere $4$ indici $a < b < c < d$ tali che
-$V_a + V_b + V_c + V_d = K \cdot x$, dove $x$ è un intero maggiore di 0.
+Scopri se Pierignolo può creare il recinto! Scrivi \texttt{SI} se può crearlo, altrimenti scrivi \texttt{NO}.
 
 
 \Implementation
@@ -46,8 +45,7 @@ Dovrai sottoporre un unico file, con estensione \texttt{.cpp}.
 
 Il file di input è composto da $2$ righe:
 \begin{itemize}
-    \item Riga 1: gli interi $N$ e $K$, separati da uno spazio.
-    \item Riga 2: $N$ interi, ovvero le lunghezze delle corde separate da uno spazio.
+    \item Riga 1: gli interi $K$ e $N$, separati da uno spazio.
 \end{itemize}
 
 Il file di output è composto da $1$ riga:
@@ -61,9 +59,7 @@ Il file di output è composto da $1$ riga:
 \Constraints
 
 \begin{itemize}[nolistsep, itemsep=2mm]
-    \item $4 \le N \le 1\:000$.
-    \item $2 \le K \le 1\:000$.
-    \item $1 \le V_i \le 1\:000\:000$, per ogni $i = 0 \dots N-1$.
+    \item $1 \le K, N \le 1\:000\:000$.
 \end{itemize}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
@@ -77,13 +73,9 @@ Per ottenere il punteggio relativo ad un subtask,
 
 \IIOTsubtask{0}{1}{Casi d'esempio.}
 
-\IIOTsubtask{10}{1}{$N \le 30$ e $K \le 30$.}
+\IIOTsubtask{25}{1}{$K, N\le 30$.}
 
-\IIOTsubtask{15}{1}{$N \le 30$.}
-
-\IIOTsubtask{20}{3}{$K \le 30$.}
-
-\IIOTsubtask{55}{3}{Nessuna limitazione aggiuntiva.}
+\IIOTsubtask{75}{1}{Nessuna limitazione aggiuntiva.}
 
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
@@ -93,6 +85,8 @@ Per ottenere il punteggio relativo ad un subtask,
 
 \begin{example}
     \exmpfile{recinto.input0.txt}{recinto.output0.txt}%
+    \exmpfile{recinto.input1.txt}{recinto.output1.txt}%
+    \exmpfile{recinto.input2.txt}{recinto.output2.txt}%
 \end{example}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
@@ -100,7 +94,6 @@ Per ottenere il punteggio relativo ad un subtask,
 
 \Explanation
 
-Nel caso d'esempio, ci sono $4$ combinazioni valide: $(3, 10, 4, 3), (3, 10, 1, 2), (3, 4, 3, 2), (10, 3, 1, 2)$.
+Nel primo caso d'esempio il pezzo di metallo non è abbastanza lungo.
 
-Nota che due corde della stessa lunghezza possono essere legate tra di loro. Possono anche formare combinazioni diverse,
-come ad esempio $(3, 10, 1, 2)$ che compare due volte perché ci sono due corde diverse di lunghezza 3.
+Nei seguenti casi, il pezzo di metallo è abbastanza lungo per creare il recinto.

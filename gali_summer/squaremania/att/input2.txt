@@ -1,0 +1,1 @@
+../testo/squaremania.input2.txt
