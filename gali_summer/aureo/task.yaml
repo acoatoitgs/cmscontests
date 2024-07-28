@@ -2,7 +2,7 @@ name: aureo
 title: Diffidenza Greca
 syllabuslevel: 4
 
-memory_limit: 256
+memory_limit: 128
 time_limit: 1.0
 infile: ""
 outfile: ""

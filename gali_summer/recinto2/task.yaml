@@ -2,7 +2,7 @@ name: recinto2
 title: Corde prolisse
 syllabuslevel: 3
 
-memory_limit: 128
+memory_limit: 64
 time_limit: 1.0
 infile: ""
 outfile: ""
